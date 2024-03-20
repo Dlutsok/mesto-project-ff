@@ -14,8 +14,7 @@ function createCard(item, { deleteCard }) {
 
     deleteButton.addEventListener('click', function () {
         const card = deleteButton.closest('.places__item');
-        card.remove();
-        deleteCard(item);
+        deleteCard(card);
     });
 
     return cardElement;
@@ -26,5 +25,6 @@ initialCards.forEach(function (element) {
     placesList.append(cardElement);
 });
 
-function deleteCard(item) {
+function deleteCard(card) {
+    card.remove();
 }
